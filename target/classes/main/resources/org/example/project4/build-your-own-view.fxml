@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="507.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.project4.BuildYourOwnController">
+   <children>
+      <Pane prefHeight="496.0" prefWidth="340.0">
+         <children>
+            <Pane layoutX="20.0" prefHeight="67.0" prefWidth="357.0">
+               <children>
+                  <Text layoutX="20.0" layoutY="30.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.2" text="Build your own pizza!">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="20.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You may choose up to 7 toppings. Each topping costs $1.69" />
+               </children>
+            </Pane>
+            <Pane fx:id="toppingSelectorPane" layoutX="20.0" layoutY="202.0" prefHeight="229.0" prefWidth="273.0">
+               <children>
+                  <Text layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meats" />
+                  <Text layoutX="156.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veggies" />
+                  <CheckBox layoutX="20.0" layoutY="33.0" mnemonicParsing="false" text="Sausage" />
+                  <CheckBox layoutX="156.0" layoutY="33.0" mnemonicParsing="false" text="Green pepper" />
+                  <CheckBox layoutX="20.0" layoutY="62.0" mnemonicParsing="false" text="Pepperoni" />
+                  <CheckBox layoutX="20.0" layoutY="91.0" mnemonicParsing="false" text="Beef" />
+                  <CheckBox layoutX="20.0" layoutY="120.0" mnemonicParsing="false" text="Ham" />
+                  <CheckBox layoutX="20.0" layoutY="149.0" mnemonicParsing="false" text="BBQ Chicken" />
+                  <CheckBox layoutX="20.0" layoutY="178.0" mnemonicParsing="false" text="Buffalo Chicken" />
+                  <CheckBox layoutX="156.0" layoutY="62.0" mnemonicParsing="false" text="Onion" />
+                  <CheckBox layoutX="156.0" layoutY="91.0" mnemonicParsing="false" text="Pineapple" />
+                  <CheckBox layoutX="156.0" layoutY="120.0" mnemonicParsing="false" text="Black olive" />
+                  <CheckBox layoutX="156.0" layoutY="149.0" mnemonicParsing="false" text="Mushroom" />
+                  <CheckBox layoutX="156.0" layoutY="178.0" mnemonicParsing="false" text="Jalapeno" />
+                  <CheckBox layoutX="156.0" layoutY="207.0" mnemonicParsing="false" text="Basil" />
+               </children>
+            </Pane>
+            <Pane fx:id="sizeSelectorPane" layoutX="30.0" layoutY="70.0" prefHeight="139.0" prefWidth="167.0">
+               <children>
+                  <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a size:" />
+                  <RadioButton fx:id="smallRadioBtn" layoutX="6.0" layoutY="30.0" mnemonicParsing="false" text="Small" />
+                  <RadioButton fx:id="medRadioBtn" layoutX="6.0" layoutY="55.0" mnemonicParsing="false" text="Medium" />
+                  <RadioButton fx:id="largeRadioBtn" layoutX="6.0" layoutY="80.0" mnemonicParsing="false" text="Large" />
+                  <Text fx:id="smallPriceText" layoutX="93.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                  <Text fx:id="medPriceText" layoutX="93.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                  <Text fx:id="largePriceText" layoutX="93.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                  <Text layoutX="6.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="**price before adding toppings**">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Button fx:id="addBYOPizzaBtn" layoutX="197.0" layoutY="449.0" mnemonicParsing="false" onAction="#addBYOPizza" prefHeight="26.0" prefWidth="121.0" text="Add pizza" />
+            <Button fx:id="goBackBtn" layoutX="30.0" layoutY="449.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#navigateAddOrderView" prefHeight="26.0" prefWidth="150.0" text="Go back to select styles" />
+            <Pane fx:id="subtotalPane" layoutX="212.0" layoutY="104.0" prefHeight="46.0" prefWidth="138.0" style="-fx-border-color: gray;">
+               <children>
+                  <Text layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal:" />
+                  <Text fx:id="subTotalText" layoutX="66.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</VBox>
