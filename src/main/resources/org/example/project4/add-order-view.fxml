@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="461.0" prefWidth="759.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.project4.AddOrderViewController">
+   <children>
+      <Pane prefHeight="440.0" prefWidth="463.0">
+         <children>
+            <Pane fx:id="addNewPizzaPane" layoutX="130.0" prefHeight="440.0" prefWidth="386.0">
+               <children>
+                  <Pane fx:id="chooseStylePane" prefHeight="83.0" prefWidth="376.0">
+                     <children>
+                        <Text layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.2" text="Add a new pizza">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="chooseStyleCmb" layoutX="20.0" layoutY="58.0" prefWidth="150.0" />
+                        <Line endX="0.678619384765625" endY="-68.58322143554688" layoutX="376.0" layoutY="42.0" startX="0.678619384765625" startY="413.56072998046875" stroke="#00000033" />
+                        <Text layoutX="20.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the style of pizza" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="selectPizzaTypePane" layoutY="83.0" prefHeight="76.0" prefWidth="376.0">
+                     <children>
+                        <Button fx:id="chooseSpecialtyBtn" layoutX="20.0" layoutY="40.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="151.0" text="Specialty" />
+                        <Button fx:id="chooseBYOBtn" layoutX="185.0" layoutY="40.0" mnemonicParsing="false" onAction="#navigateBYOView" prefHeight="26.0" prefWidth="151.0" text="Build Your Own" />
+                        <Text layoutX="20.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the type of pizza" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="selectSpecialtyPane" layoutY="159.0" prefHeight="103.0" prefWidth="188.0">
+                     <children>
+                        <RadioButton fx:id="deluxeRadioBtn" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" text="Deluxe" />
+                        <RadioButton fx:id="meatzzaRadioBtn" layoutX="20.0" layoutY="55.0" mnemonicParsing="false" text="Meatzza" />
+                        <RadioButton fx:id="bbqChickenRadioBtn" layoutX="20.0" layoutY="80.0" mnemonicParsing="false" text="BBQ Chicken" />
+                        <Text layoutX="20.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a specialty" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="selectSizePane" layoutX="188.0" layoutY="159.0" prefHeight="103.0" prefWidth="188.0">
+                     <children>
+                        <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a size:" />
+                        <RadioButton fx:id="smallRadioBtn" layoutX="6.0" layoutY="30.0" mnemonicParsing="false" text="Small" />
+                        <RadioButton fx:id="medRadioBtn" layoutX="6.0" layoutY="55.0" mnemonicParsing="false" text="Medium" />
+                        <RadioButton fx:id="largeRadioBtn" layoutX="6.0" layoutY="80.0" mnemonicParsing="false" text="Large" />
+                        <Text fx:id="smallPriceText" layoutX="93.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                        <Text fx:id="medPriceText" layoutX="93.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                        <Text fx:id="largePriceText" layoutX="93.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                     </children>
+                  </Pane>
+                  <ImageView fx:id="pizzaImageView" fitHeight="123.0" fitWidth="161.0" layoutX="190.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
+                  <Pane fx:id="subtotalPane" layoutX="397.0" layoutY="320.0" prefHeight="80.0" prefWidth="221.0" style="-fx-border-color: gray;">
+                     <children>
+                        <Text layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal:" />
+                        <Text fx:id="orderTotalText" layoutX="105.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" wrappingWidth="102.49993534769669">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="subTotalText" layoutX="105.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                        <Text layoutX="10.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax (6.625%):" wrappingWidth="80.5010805288955" />
+                        <Text fx:id="taxText" layoutX="105.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0.00" />
+                        <Text layoutX="10.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Total:" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="addPizzaBtn" layoutX="227.0" layoutY="410.0" mnemonicParsing="false" onAction="#addSpecialtyPizza" prefHeight="26.0" prefWidth="88.0" text="Add pizza" />
+                  <TextArea fx:id="showPizzaToppingsTextArea" layoutX="17.0" layoutY="277.0" prefHeight="154.0" prefWidth="143.0" />
+               </children>
+            </Pane>
+            <ScrollPane fx:id="orderDetailsScrollPane" layoutX="521.0" layoutY="22.0" prefHeight="292.0" prefWidth="238.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="238.0" />
+              </content>
+            </ScrollPane>
+            <Text layoutX="520.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order details">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
+            <Pane fx:id="sidePane" prefHeight="440.0" prefWidth="131.0" style="-fx-border-color: gray;">
+               <children>
+                  <Pane layoutX="11.0" layoutY="162.0" prefHeight="26.0" prefWidth="109.0" style="-fx-border-color: black; -fx-border-radius: 8; -fx-background-color: lightgray;">
+                     <children>
+                        <Text layoutX="24.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RU Pizzeria" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="viewAllOrdersBtn" layoutX="12.0" layoutY="198.0" mnemonicParsing="false" onAction="#navigateAllOrdersView" prefHeight="26.0" prefWidth="109.0" text="View all orders" />
+               </children>
+            </Pane>
+            <Button fx:id="cancelOrderBtn" layoutX="644.0" layoutY="408.0" mnemonicParsing="false" onAction="#cancelOrder" prefHeight="26.0" prefWidth="105.0" text="Cancel Order" />
+            <Button fx:id="placeOrderBtn" layoutX="527.0" layoutY="408.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="26.0" prefWidth="107.0" text="Place Order" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
